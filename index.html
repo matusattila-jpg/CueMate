@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CueMate</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<div id="showSidebar">
+    <div class="sidebarHeader">
+        <div class="sidebarTitle">SHOWS</div>
+        <button id="newShowBtn" type="button">+ New Show</button>
+    </div>
+    <div id="showList" class="showList"></div>
+</div>
+
+<div id="mainPanel">
+
+<header id="topBar" class="topControlBar">
+    <div class="topBarLeft">
+        <button id="toggleSidebarBtn" type="button" class="iconBtn">☰</button>
+        <button id="startBtn" class="startBtn">START</button>
+    </div>
+
+    <div class="topBarCenter">
+        <div id="showName" class="showNameInline">Nincs betöltött műsor</div>
+        <div id="elapsed">00:00</div>
+    </div>
+
+    <div class="topBarRight">
+        <button id="pauseBtn" class="controlSecondary">PAUSE</button>
+        <button id="resetBtn" class="controlSecondary">RESET</button>
+    </div>
+</header>
+
+<div class="correctionRow" aria-label="Time corrections">
+    <button id="minus5">-5</button>
+    <button id="minus1">-1</button>
+    <button id="plus1">+1</button>
+    <button id="plus5">+5</button>
+</div>
+
+<section class="scriptPanel">
+    <label for="scriptInput">Szkript beillesztése</label>
+    <textarea id="scriptInput" placeholder="0:57 CUE 258&#10;0:57 FÜST&#10;1:24 STROBE&#10;2:20 BLACKOUT"></textarea>
+</section>
+
+<section class="card previous">
+    <div class="title">ELŐZŐ</div>
+    <div id="previousCue">—</div>
+</section>
+
+<section id="currentCard" class="card current">
+    <div class="title">KÖVETKEZŐ</div>
+
+    <div id="currentCue">
+        Várakozás...
+    </div>
+
+    <div id="countdown">
+        00:00
+    </div>
+
+    <div id="progressOuter">
+        <div id="progressInner"></div>
+    </div>
+
+</section>
+
+<section class="card next">
+
+    <div class="title">UTÁNA</div>
+
+    <div id="nextCue">
+        —
+    </div>
+
+    <div id="nextCountdown">
+        --
+    </div>
+
+</section>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="parser.js"></script>
+<script src="timer.js"></script>
+<script src="storage.js"></script>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>
